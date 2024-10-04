@@ -35,3 +35,9 @@ jobs:
       #Run tests:
       - name: Run tests
         run: npm run run-tests
+      #Publish test results:
+      - name: Save teest results as artifacts
+        uses: actions/upload-artifacts@v4
+        with:
+          name: playwright-test-results
+          path: ./playwright-report
