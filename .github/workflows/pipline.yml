@@ -1,0 +1,21 @@
+name: Pipline
+on:
+  push:
+    branches:
+      - master
+      - gh-actions
+
+    pull_request:
+    branches:
+      - master
+      - gh-actions
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch code
+        uses: actions/checkout@4
+
+# docker pull rasilva1986/my-vue-app:v1
+# docker run -d -p 3000:3000 rasilva1986/my-vue-app:v1
