@@ -27,6 +27,7 @@ test.describe('Front-End Tests', () => {
     // await page.getByRole('button', { name: 'Login' }).click();
     await page.locator('#app > div > div > div:nth-child(1) > a').click();
     await expect(page).toHaveURL('http://localhost:3000/rooms');
+    await expect(page.getByText('Rooms')).toBeVisible;
   });
 
 });
