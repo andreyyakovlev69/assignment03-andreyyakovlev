@@ -16,7 +16,7 @@ jobs:
     steps:
       #Fetch code:
       - name: Fetch code
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       #Install packages(dependensies):
       - name: Install dependensies
         run: npm install
