@@ -43,17 +43,15 @@ test.describe('Back-End Tests', () => {
     apiHelper = new APIHelper(BASE_URL, `${process.env.TEST_USERNAME}`, `${process.env.TEST_PASSWORD}`);
     console.log(`${process.env.TEST_PASSWORD}`)
     const loginResponse = await apiHelper.performLogin(request);
-    expect(loginResponse.ok()).toBeTruthy();
     const loginData = await loginResponse.json();
-    expect(loginData).toHaveProperty('username', `${process.env.TEST_USERNAME}`);
-    expect(loginData).toHaveProperty('token');
-
   })
   
   test('TC01 Login', async ({ request }) => {
     const loginResponse = await apiHelper.performLogin(request);
     const loginData = await loginResponse.json();
     expect(loginResponse.ok()).toBeTruthy();
+    expect(loginData).toHaveProperty('username', `${process.env.TEST_USERNAME}`);
+    expect(loginData).toHaveProperty('token');
     expect(loginData).toMatchObject({
       username: `${process.env.TEST_USERNAME}`,
       token: expect.any(String),
