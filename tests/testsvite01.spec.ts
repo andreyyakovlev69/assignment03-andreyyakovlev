@@ -43,7 +43,7 @@ test.describe('Back-End Tests', () => {
     apiHelper = new APIHelper(BASE_URL, `${process.env.TEST_USERNAME}`, `${process.env.TEST_PASSWORD}`);
     console.log(`${process.env.TEST_PASSWORD}`)
     const loginResponse = await apiHelper.performLogin(request);
-    const loginData = await loginResponse.json();
+    // const loginData = await loginResponse.json();
   })
   
   test('TC01 Login', async ({ request }) => {
